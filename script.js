@@ -11,6 +11,11 @@ $(document).ready(function () {
       "&appid=" +
       APIKey;
 
+    var forecast =
+      "https://api.openweathermap.org/data/2.5/forecast?q=" +
+      location +
+      "&appid=" +
+      APIKey;
     $.ajax({
       url: queryUrl,
       method: "GET",
@@ -21,6 +26,12 @@ $(document).ready(function () {
       //   $(".wind").text("Wind speed: " + response.wind.speed);
       //   $(".humidity").text("Humidity: " + response.main.humidity);
       //   $(".temp").text("Current temp in F: " + tempF);
+    });
+    $.ajax({
+      url: forecast,
+      method: "GET",
+    }).then(function (response) {
+      console.log(response);
     });
   };
   locationSearch("Denver,Colorado");
