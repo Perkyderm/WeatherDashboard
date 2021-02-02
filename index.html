@@ -21,20 +21,77 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <div class="container-fluid" style>
-      <div class="text-center" style="background-color: DarkSlateBlue">
+    <div class="text-center" style="background-color: rgb(143, 132, 214)">
         <h1 ">Weather Dashboard</h1>
-      </div>
-      <div class="container">
+    </div>
+
+    <div  class="container-fluid" style="margin-top: 70px;">
+      <div class="row">
+      <div id="cities" class="col-sm-2">
           <h2>Search for a City</h2>
           <input id="locationInput"></input>
           <button id="searchbtn">Search</button>
           <hr>
-      <div class="container-fluid float-right">
-          <h2>"City Name"</h2>
+          <div id="cityButtons">
+          <ul id="list"></ul>
+          </div>
       </div>
-      </div>
+      
+    <div class="col-sm-10 container-fluid">
+    <div id="currentCity"></div>
+    <div class="row col-md-12 cardBox">
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title 0forecastDate "></h5>
+    <h5 class="card-subtitle mb-2 text-muted 0forecastIcon 0forecastTemp"></h5>
+    <p class="card-text 0forecastHumidity"></p>
+  </div>
+</div>
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title 1forecastDate "></h5>
+    <h5 class="card-subtitle mb-2 text-muted 1forecastIcon 1forecastTemp"></h5>
+    <p class="card-text 1forecastHumidity"></p>
+  </div>
+</div>
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title 2forecastDate "></h5>
+    <h5 class="card-subtitle mb-2 text-muted 2forecastIcon 2forecastTemp"></h5>
+    <p class="card-text 2forecastHumidity"></p>
+  </div>
+</div>
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title 3forecastDate "></h5>
+    <h5 class="card-subtitle mb-2 text-muted 3forecastIcon 3forecastTemp"></h5>
+    <p class="card-text 3forecastHumidity"></p>
+  </div>
+</div>
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title 4forecastDate "></h5>
+    <h5 class="card-subtitle mb-2 text-muted 4forecastIcon 4forecastTemp"></h5>
+    <p class="card-text 4forecastHumidity"></p>
+  </div>
+</div>
+
+</div>
+</div>
+    
+
+</div>
 
     </div>
+    
+          
+      </div>
   </body>
 </html>
+
+
+
+
+
+
+
