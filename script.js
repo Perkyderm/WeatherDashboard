@@ -25,11 +25,11 @@ $(document).ready(function () {
       method: "GET",
     }).then(function (response) {
       console.log(response);
-      var tempF = Math.floor(response.main.temp - 273.15) * 1.8 + 32;
+      var tempF = ((response.main.temp - 273.15) * 1.8 + 32).toFixed(1);
       var iconUrl =
-        "http://openweathermap.org/img/w/" + response.weather[0].icon + ".png"; //icon url
-      var lat = response.coord.lat; // Latiude
-      var lon = response.coord.lon; // Longitude
+        "http://openweathermap.org/img/w/" + response.weather[0].icon + ".png";
+      var lon = response.coord.lon;
+      var lat = response.coord.lat;
       $("#currentCity")
         .html(
           "<h2 >" +
@@ -65,7 +65,6 @@ $(document).ready(function () {
         lon +
         "&units=imperial" +
         "&appid=45e45c0bb2ef540df33fa21a29aafa8a";
-      console.log(forecast);
 
       $.ajax({
         url: forecast,
@@ -80,17 +79,17 @@ $(document).ready(function () {
           var date = new Date(unix_timestamp * 1000).toLocaleDateString(
             "en-US"
           );
-          var iconurl =
+          var fivedayIcon =
             "http://openweathermap.org/img/w/" +
             fiveDay[i].weather[0].icon +
             ".png";
           $("." + [i] + "forecastDate").html(date);
-          var tempF = ((fiveDay[i].temp.max - 273.15) * 1.8 + 32).toFixed(1);
+          var tempF = fiveDay[i].temp.day.toFixed(1);
           $("." + [i] + "forecastTemp").html(tempF + "° F");
           $("." + [i] + "forecastHumidity").html(
             fiveDay[i].humidity + "% humidity"
           );
-          $("." + [i] + "forecastIcon").attr("src", iconurl);
+          $("." + [i] + "forecastIcon").attr("src", fivedayIcon); //! THIS
         }
 
         $("#currentCity").append(

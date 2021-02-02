@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <div class="text-center" style="background-color: rgb(143, 132, 214)">
+    <div class="text-center" style="background-color: rgb(143, 132, 214); padding: 60px;">
         <h1 ">Weather Dashboard</h1>
     </div>
 
@@ -30,7 +30,7 @@
       <div id="cities" class="col-sm-2">
           <h2>Search for a City</h2>
           <input id="locationInput"></input>
-          <button id="searchbtn">Search</button>
+          <button type="button" id="searchbtn" class="btn" style="background-color:slateblue; margin-top: 10px;">Search</button>
           <hr>
           <div id="cityButtons">
           <ul id="list"></ul>
@@ -64,7 +64,6 @@
 <div class="card">
   <div class="card-body">
     <h5 class="card-title 3forecastDate "></h5>
-    <img id="3forecastIcon" src="" alt=""></img>//this
     <h5 class="card-subtitle mb-2 text-muted  3forecastTemp"></h5>
     <p class="card-text 3forecastHumidity"></p>
   </div>
