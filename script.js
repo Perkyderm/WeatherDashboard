@@ -87,7 +87,7 @@ $(document).ready(function () {
           var tempF = fiveDay[i].temp.day.toFixed(1);
           $("." + [i] + "forecastTemp").html(tempF + "° F");
           $("." + [i] + "forecastHumidity").html(
-            fiveDay[i].humidity + "% humidity"
+            "Humidity: " + fiveDay[i].humidity + "%"
           );
           $("." + [i] + "forecastIcon").attr("src", fivedayIcon); //! THIS
           console.log(fivedayIcon);
