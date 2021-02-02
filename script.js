@@ -80,13 +80,17 @@ $(document).ready(function () {
           var date = new Date(unix_timestamp * 1000).toLocaleDateString(
             "en-US"
           );
+          var iconurl =
+            "http://openweathermap.org/img/w/" +
+            fiveDay[i].weather[0].icon +
+            ".png";
           $("." + [i] + "forecastDate").html(date);
           var tempF = ((fiveDay[i].temp.max - 273.15) * 1.8 + 32).toFixed(1);
           $("." + [i] + "forecastTemp").html(tempF + "° F");
           $("." + [i] + "forecastHumidity").html(
             fiveDay[i].humidity + "% humidity"
           );
-          $("." + [i] + "forecastIcon").html(fiveDay[i].weather[0].icon);
+          $("." + [i] + "forecastIcon").attr("src", iconurl);
         }
 
         $("#currentCity").append(
@@ -131,7 +135,7 @@ $(document).ready(function () {
     locationResult(inputCity);
   });
 
-  locationResult(JSON.parse(localStorage.getItem("searchedCities")) || []);
+  locationResult(JSON.parse(localStorage.getItem("searchedCities")) || []); //!THIS NEEDS FIXING
 
   function showCities() {
     $("#cityButtons").empty();
