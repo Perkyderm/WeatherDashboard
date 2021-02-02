@@ -33,3 +33,7 @@
 .purple {
   background-color: #2c1c47;
 }
+
+.card img {
+  display: inline;
+}

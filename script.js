@@ -90,6 +90,7 @@ $(document).ready(function () {
             fiveDay[i].humidity + "% humidity"
           );
           $("." + [i] + "forecastIcon").attr("src", fivedayIcon); //! THIS
+          console.log(fivedayIcon);
         }
 
         $("#currentCity").append(
@@ -134,7 +135,11 @@ $(document).ready(function () {
     locationResult(inputCity);
   });
 
-  locationResult(JSON.parse(localStorage.getItem("searchedCities")) || []); //!THIS NEEDS FIXING
+  // locationResult(JSON.parse(localStorage.getItem("searchedCities")) || []); //!THIS NEEDS FIXING
+  var history = JSON.parse(window.localStorage.getItem("searchedCities")) || [];
+  if (history.length > 0) {
+    locationResult(history[history.length - 1]);
+  }
 
   function showCities() {
     $("#cityButtons").empty();
