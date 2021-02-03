@@ -41,8 +41,6 @@ body {
   display: inline;
 }
 
-.hide {
+/* .hide {
   display: none;
-}
-
-/* ! add if there is nothing in storage, then HIDE cards, else SHOW cards.  */
+} */
