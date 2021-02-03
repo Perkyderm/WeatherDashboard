@@ -1,3 +1,6 @@
+body {
+  background-image: url(./Pics/KauaiCanyonGrey.png);
+}
 .card {
   background-color: lavender;
   float: left;
@@ -37,3 +40,9 @@
 .card img {
   display: inline;
 }
+
+.hide {
+  display: none;
+}
+
+/* ! add if there is nothing in storage, then HIDE cards, else SHOW cards.  */

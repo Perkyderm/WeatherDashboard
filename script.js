@@ -135,10 +135,14 @@ $(document).ready(function () {
     locationResult(inputCity);
   });
 
-  // locationResult(JSON.parse(localStorage.getItem("searchedCities")) || []); //!THIS NEEDS FIXING
   var history = JSON.parse(window.localStorage.getItem("searchedCities")) || [];
   if (history.length > 0) {
     locationResult(history[history.length - 1]);
+  }
+
+  //! fix this
+  if (history.length === 0) {
+    $(".cardBox").addClass("hide");
   }
 
   function showCities() {
