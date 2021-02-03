@@ -10,7 +10,7 @@ Click <a href="https://perkyderm.github.io/WeatherDashboard/">here</a> to go to 
 
 # Preview
 
-![picture](Pics\Screenshot.png)
+![picture](Pics/Screenshot.png)
 
 # Note
 
