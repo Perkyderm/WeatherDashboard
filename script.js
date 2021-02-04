@@ -1,18 +1,6 @@
 var APIKey = "eeae76131291ea13fc8e4cd946e40faf";
 
-//todo link local storge to save searches
-//todo event listener for search city tie in above todo   use .trim()
-//todo add enter press
-//todo  icon rep
-// todo UV color corresponding identifiers
-//todo 5 day forecast that displays the date, icon rep if condisitons, temp, and humidity
-//todo search histroy need to go into  a button that can recall it - goes into already created event lsitener
-//*"history button"
-//todo
-
 $(document).ready(function () {
-  //
-
   var locationResult = function (location) {
     var queryUrl =
       "https://api.openweathermap.org/data/2.5/weather?q=" +
@@ -114,6 +102,16 @@ $(document).ready(function () {
       });
     });
   };
+  function init() {
+    var history =
+      JSON.parse(window.localStorage.getItem("searchedCities")) || [];
+    if (history.length > 0) {
+      locationResult(history[history.length - 1]);
+    }
+    if (history.length > 0) {
+      $(".cardBox").removeClass("hide");
+    }
+  }
   //   locationResult("Seoul"); //*this is the default location
 
   //! Button results
@@ -133,17 +131,8 @@ $(document).ready(function () {
         "</button>"
     );
     locationResult(inputCity);
+    init();
   });
-
-  var history = JSON.parse(window.localStorage.getItem("searchedCities")) || [];
-  if (history.length > 0) {
-    locationResult(history[history.length - 1]);
-  }
-
-  //! fix this
-  if (history.length === 0) {
-    $(".cardBox").addClass("hide");
-  }
 
   function showCities() {
     $("#cityButtons").empty();
@@ -169,4 +158,5 @@ $(document).ready(function () {
 
     locationResult(cityInput);
   });
+  init();
 });

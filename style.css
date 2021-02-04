@@ -38,6 +38,8 @@
   display: inline;
 }
 
-/* .hide {
+/*! When page refreshes, img loads. Not on landing. Fix */
+
+.hide {
   display: none;
-} */
+}
