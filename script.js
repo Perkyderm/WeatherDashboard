@@ -15,7 +15,7 @@ $(document).ready(function () {
       console.log(response);
       var tempF = ((response.main.temp - 273.15) * 1.8 + 32).toFixed(1);
       var iconUrl =
-        "http://openweathermap.org/img/w/" + response.weather[0].icon + ".png";
+        "https://openweathermap.org/img/w/" + response.weather[0].icon + ".png";
       var lon = response.coord.lon;
       var lat = response.coord.lat;
       $("#currentCity")
